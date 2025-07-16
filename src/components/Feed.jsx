@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constants";
 import { addFeed } from "../utils/feedSlice";
@@ -23,13 +23,11 @@ const Feed = () => {
   };
   useEffect(() => {
     getFeed();
-  }, [feed]);
+  }, []);
 
   return (
     <div className="justify-center flex flex-wrap">
-      {/* {feed && feed.map((f) =>  */}
-      <FeedCard key={feed?._id} user={feed[0]} />
-      {/* )} */}
+      {feed && feed.map((f) => <FeedCard key={f?._id} user={f} />)}
     </div>
   );
 };
