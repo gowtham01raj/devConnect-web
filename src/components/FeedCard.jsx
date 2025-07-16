@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from "react";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { removeUserFromFeed } from "../utils/feedSlice";
@@ -7,11 +6,15 @@ import { removeUserFromFeed } from "../utils/feedSlice";
 const FeedCard = ({ user }) => {
   const dispatch = useDispatch();
   const sendRequest = async (status, _id) => {
-    const res = await axios.post(BASE_URL + `/request/send/${status}/${_id}`,{},{withCredentials:true});
+    const res = await axios.post(
+      BASE_URL + `/request/send/${status}/${_id}`,
+      {},
+      { withCredentials: true }
+    );
     console.log(res.data.data);
     dispatch(removeUserFromFeed(_id));
   };
-  
+
   const { photoUrl, firstName, lastName, skills, about, _id } = user;
   return (
     <div>
