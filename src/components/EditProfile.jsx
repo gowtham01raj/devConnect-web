@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import FeedCard from "./feedCard";
+import { useDispatch } from "react-redux";
+import FeedCard from "./FeedCard";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { addUser } from "../utils/userSlice";
