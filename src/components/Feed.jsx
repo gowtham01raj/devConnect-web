@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constants";
 import { addFeed } from "../utils/feedSlice";
-import FeedCard from "./feedCard";
+import FeedCard from "./FeedCard";
 
 const Feed = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Feed = () => {
 
   return (
     <div className="justify-center flex flex-wrap">
-      {/* {feed && feed.map((f) => <FeedCard key={f?._id} user={f} />)} */}
+      {feed && feed.map((f) => <FeedCard key={f?._id} user={f} />)}
     </div>
   );
 };
