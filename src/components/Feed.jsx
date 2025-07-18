@@ -27,7 +27,7 @@ const Feed = () => {
 
   return (
     <div className="justify-center flex flex-wrap">
-      {feed && feed.map((f) => <FeedCard key={f?._id} user={f} />)}
+      {feed && <FeedCard key={feed?._id} user={feed[0]} />}
     </div>
   );
 };

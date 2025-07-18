@@ -11,7 +11,6 @@ const FeedCard = ({ user }) => {
       {},
       { withCredentials: true }
     );
-    console.log(res.data.data);
     dispatch(removeUserFromFeed(_id));
   };
 

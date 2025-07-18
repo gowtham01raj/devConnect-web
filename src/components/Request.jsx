@@ -13,7 +13,7 @@ const Request = () => {
         withCredentials: true,
       });
 
-      dispatch(addRequests(res?.data?.data));
+      dispatch(addRequests(res.data.data));
     } catch (err) {
       console.error(err);
     }
@@ -26,7 +26,6 @@ const Request = () => {
       { withCredentials: true }
     );
 
-    console.log(res.data.data);
     dispatch(removeRequests(_id));
   };
 
@@ -54,13 +53,13 @@ const Request = () => {
             <div className="">
               <button
                 className="btn btn-dash btn-warning m-2"
-                onClick={reviewRequest("accepted", request._id)}
+                onClick={() => reviewRequest("accepted", request._id)}
               >
                 Accepted
               </button>
               <button
                 className="btn btn-dash btn-error m-2"
-                onClick={reviewRequest("rejected", request._id)}
+                onClick={() => reviewRequest("rejected", request._id)}
               >
                 Ignored
               </button>
